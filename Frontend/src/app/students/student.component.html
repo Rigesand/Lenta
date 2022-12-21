@@ -1,0 +1,74 @@
+<div class="container page pull-xs-left students">
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-lg btn-primary pull-xs-left" routerLink="/createStudent">Добавить</button>
+      <table>
+        <thead>
+        <tr>
+          <th>ФИО</th>
+          <th>Дата рождения</th>
+          <th>Название ВУЗА</th>
+          <th>Курс</th>
+          <th>Факультет</th>
+          <th>Контактный телефон</th>
+          <th>Email</th>
+          <th>Информация о себе</th>
+          <th>Дата создания</th>
+          <th>Дата изменения</th>
+          <th>Кем создано</th>
+          <th>Кем изменено</th>
+          <th>Действия</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let student of studentService.students">
+          <td>
+            <p>{{ student.fullName}}</p>
+          </td>
+          <td>
+            <p>{{ student.birthDate| date:'M/d/yyyy'}}</p>
+          </td>
+          <td>
+            <p>{{ student.universityName}}</p>
+          </td>
+          <td>
+            <p>{{ student.course}}</p>
+          </td>
+          <td>
+            <p>{{ student.faculty}}</p>
+          </td>
+          <td>
+            <p>{{ student.phoneNumber}}</p>
+          </td>
+          <td>
+            <p>{{ student.email}}</p>
+          </td>
+          <td>
+            <p>{{ student.description}}</p>
+          </td>
+          <td>
+            <p>{{ student.createdDate | date:'M/d/yyyy h:mm a'}}</p>
+          </td>
+          <td>
+            <p>{{ student.changeDate | date:'M/d/yyyy h:mm a'}}</p>
+          </td>
+          <td>
+            <p>{{ student.createUser}}</p>
+          </td>
+          <td>
+            <p>{{ student.changeUser}}</p>
+          </td>
+          <td>
+            <button routerLink="/updateStudent" (click)="Submit(student.id)">Изменить</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+

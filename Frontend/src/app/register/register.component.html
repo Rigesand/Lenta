@@ -1,0 +1,35 @@
+<div class="auth-page">
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 col-xs-12">
+        <h1 class="text-xs-center">Регистрация</h1>
+        <p class="text-xs-center">
+          <a [routerLink]="['']">Уже есть аккаунт?</a>
+        </p>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <fieldset>
+            <fieldset class="form-group">
+              <input type="text" class="form-control form-control-lg" placeholder="Email" formControlName="email"/>
+            </fieldset>
+            <fieldset class="form-group">
+              <input type="password" class="form-control form-control-lg" placeholder="Password" formControlName="password"/>
+            </fieldset>
+            <fieldset class="form-group">
+              <div class="form_toggle">
+                <div class="form_toggle-item item-1">
+                  <input id="fid-1" type="radio" value="Админ" checked formControlName="role">
+                  <label for="fid-1">Админ</label>
+                </div>
+                <div class="form_toggle-item item-2">
+                  <input id="fid-2" type="radio" value="Кандидат" formControlName="role">
+                  <label for="fid-2">Кандидат</label>
+                </div>
+              </div>
+            </fieldset>
+          </fieldset>
+          <button class="btn btn-lg btn-primary pull-xs-right" type="submit">Зарегистрироваться</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
